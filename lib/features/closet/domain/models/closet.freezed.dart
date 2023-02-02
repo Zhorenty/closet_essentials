@@ -15,31 +15,31 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ClothesEntity {
-  int? get id =>
+mixin _$Clothes {
+  String get id =>
       throw _privateConstructorUsedError; //мб надо будет поменять на стрингу
-  String? get name => throw _privateConstructorUsedError;
-  String? get price => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get price => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
   bool get isFeature => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ClothesEntityCopyWith<ClothesEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ClothesCopyWith<Clothes> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ClothesEntityCopyWith<$Res> {
-  factory $ClothesEntityCopyWith(
-          ClothesEntity value, $Res Function(ClothesEntity) then) =
-      _$ClothesEntityCopyWithImpl<$Res, ClothesEntity>;
+abstract class $ClothesCopyWith<$Res> {
+  factory $ClothesCopyWith(Clothes value, $Res Function(Clothes) then) =
+      _$ClothesCopyWithImpl<$Res, Clothes>;
   @useResult
-  $Res call({int? id, String? name, String? price, bool isFeature});
+  $Res call(
+      {String id, String name, String price, String image, bool isFeature});
 }
 
 /// @nodoc
-class _$ClothesEntityCopyWithImpl<$Res, $Val extends ClothesEntity>
-    implements $ClothesEntityCopyWith<$Res> {
-  _$ClothesEntityCopyWithImpl(this._value, this._then);
+class _$ClothesCopyWithImpl<$Res, $Val extends Clothes>
+    implements $ClothesCopyWith<$Res> {
+  _$ClothesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -49,24 +49,29 @@ class _$ClothesEntityCopyWithImpl<$Res, $Val extends ClothesEntity>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? price = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? price = null,
+    Object? image = null,
     Object? isFeature = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      price: freezed == price
+              as String,
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
       isFeature: null == isFeature
           ? _value.isFeature
           : isFeature // ignore: cast_nullable_to_non_nullable
@@ -77,18 +82,19 @@ class _$ClothesEntityCopyWithImpl<$Res, $Val extends ClothesEntity>
 
 /// @nodoc
 abstract class _$$_ClothesEntityCopyWith<$Res>
-    implements $ClothesEntityCopyWith<$Res> {
+    implements $ClothesCopyWith<$Res> {
   factory _$$_ClothesEntityCopyWith(
           _$_ClothesEntity value, $Res Function(_$_ClothesEntity) then) =
       __$$_ClothesEntityCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? name, String? price, bool isFeature});
+  $Res call(
+      {String id, String name, String price, String image, bool isFeature});
 }
 
 /// @nodoc
 class __$$_ClothesEntityCopyWithImpl<$Res>
-    extends _$ClothesEntityCopyWithImpl<$Res, _$_ClothesEntity>
+    extends _$ClothesCopyWithImpl<$Res, _$_ClothesEntity>
     implements _$$_ClothesEntityCopyWith<$Res> {
   __$$_ClothesEntityCopyWithImpl(
       _$_ClothesEntity _value, $Res Function(_$_ClothesEntity) _then)
@@ -97,24 +103,29 @@ class __$$_ClothesEntityCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? price = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? price = null,
+    Object? image = null,
     Object? isFeature = null,
   }) {
     return _then(_$_ClothesEntity(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      price: freezed == price
+              as String,
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
       isFeature: null == isFeature
           ? _value.isFeature
           : isFeature // ignore: cast_nullable_to_non_nullable
@@ -130,16 +141,19 @@ class _$_ClothesEntity extends _ClothesEntity {
       {required this.id,
       required this.name,
       required this.price,
+      required this.image,
       this.isFeature = false})
       : super._();
 
   @override
-  final int? id;
+  final String id;
 //мб надо будет поменять на стрингу
   @override
-  final String? name;
+  final String name;
   @override
-  final String? price;
+  final String price;
+  @override
+  final String image;
   @override
   @JsonKey()
   final bool isFeature;
@@ -151,20 +165,23 @@ class _$_ClothesEntity extends _ClothesEntity {
       __$$_ClothesEntityCopyWithImpl<_$_ClothesEntity>(this, _$identity);
 }
 
-abstract class _ClothesEntity extends ClothesEntity {
+abstract class _ClothesEntity extends Clothes {
   factory _ClothesEntity(
-      {required final int? id,
-      required final String? name,
-      required final String? price,
+      {required final String id,
+      required final String name,
+      required final String price,
+      required final String image,
       final bool isFeature}) = _$_ClothesEntity;
   _ClothesEntity._() : super._();
 
   @override
-  int? get id;
+  String get id;
   @override //мб надо будет поменять на стрингу
-  String? get name;
+  String get name;
   @override
-  String? get price;
+  String get price;
+  @override
+  String get image;
   @override
   bool get isFeature;
   @override
@@ -174,32 +191,36 @@ abstract class _ClothesEntity extends ClothesEntity {
 }
 
 /// @nodoc
-mixin _$ItemEntity {
-  int get id => throw _privateConstructorUsedError;
+mixin _$Item {
+  String get id => throw _privateConstructorUsedError; //мб стринг
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   Sizes get sizes => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
   bool get isInBasket => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ItemEntityCopyWith<ItemEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ItemCopyWith<Item> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ItemEntityCopyWith<$Res> {
-  factory $ItemEntityCopyWith(
-          ItemEntity value, $Res Function(ItemEntity) then) =
-      _$ItemEntityCopyWithImpl<$Res, ItemEntity>;
+abstract class $ItemCopyWith<$Res> {
+  factory $ItemCopyWith(Item value, $Res Function(Item) then) =
+      _$ItemCopyWithImpl<$Res, Item>;
   @useResult
   $Res call(
-      {int id, String name, String description, Sizes sizes, bool isInBasket});
+      {String id,
+      String name,
+      String description,
+      Sizes sizes,
+      String image,
+      bool isInBasket});
 }
 
 /// @nodoc
-class _$ItemEntityCopyWithImpl<$Res, $Val extends ItemEntity>
-    implements $ItemEntityCopyWith<$Res> {
-  _$ItemEntityCopyWithImpl(this._value, this._then);
+class _$ItemCopyWithImpl<$Res, $Val extends Item>
+    implements $ItemCopyWith<$Res> {
+  _$ItemCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -213,13 +234,14 @@ class _$ItemEntityCopyWithImpl<$Res, $Val extends ItemEntity>
     Object? name = null,
     Object? description = null,
     Object? sizes = null,
+    Object? image = null,
     Object? isInBasket = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -232,6 +254,10 @@ class _$ItemEntityCopyWithImpl<$Res, $Val extends ItemEntity>
           ? _value.sizes
           : sizes // ignore: cast_nullable_to_non_nullable
               as Sizes,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
       isInBasket: null == isInBasket
           ? _value.isInBasket
           : isInBasket // ignore: cast_nullable_to_non_nullable
@@ -241,20 +267,24 @@ class _$ItemEntityCopyWithImpl<$Res, $Val extends ItemEntity>
 }
 
 /// @nodoc
-abstract class _$$_ItemEntityCopyWith<$Res>
-    implements $ItemEntityCopyWith<$Res> {
+abstract class _$$_ItemEntityCopyWith<$Res> implements $ItemCopyWith<$Res> {
   factory _$$_ItemEntityCopyWith(
           _$_ItemEntity value, $Res Function(_$_ItemEntity) then) =
       __$$_ItemEntityCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {int id, String name, String description, Sizes sizes, bool isInBasket});
+      {String id,
+      String name,
+      String description,
+      Sizes sizes,
+      String image,
+      bool isInBasket});
 }
 
 /// @nodoc
 class __$$_ItemEntityCopyWithImpl<$Res>
-    extends _$ItemEntityCopyWithImpl<$Res, _$_ItemEntity>
+    extends _$ItemCopyWithImpl<$Res, _$_ItemEntity>
     implements _$$_ItemEntityCopyWith<$Res> {
   __$$_ItemEntityCopyWithImpl(
       _$_ItemEntity _value, $Res Function(_$_ItemEntity) _then)
@@ -267,13 +297,14 @@ class __$$_ItemEntityCopyWithImpl<$Res>
     Object? name = null,
     Object? description = null,
     Object? sizes = null,
+    Object? image = null,
     Object? isInBasket = null,
   }) {
     return _then(_$_ItemEntity(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -286,6 +317,10 @@ class __$$_ItemEntityCopyWithImpl<$Res>
           ? _value.sizes
           : sizes // ignore: cast_nullable_to_non_nullable
               as Sizes,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
       isInBasket: null == isInBasket
           ? _value.isInBasket
           : isInBasket // ignore: cast_nullable_to_non_nullable
@@ -302,17 +337,21 @@ class _$_ItemEntity extends _ItemEntity {
       required this.name,
       required this.description,
       required this.sizes,
+      required this.image,
       this.isInBasket = false})
       : super._();
 
   @override
-  final int id;
+  final String id;
+//мб стринг
   @override
   final String name;
   @override
   final String description;
   @override
   final Sizes sizes;
+  @override
+  final String image;
   @override
   @JsonKey()
   final bool isInBasket;
@@ -324,23 +363,26 @@ class _$_ItemEntity extends _ItemEntity {
       __$$_ItemEntityCopyWithImpl<_$_ItemEntity>(this, _$identity);
 }
 
-abstract class _ItemEntity extends ItemEntity {
+abstract class _ItemEntity extends Item {
   factory _ItemEntity(
-      {required final int id,
+      {required final String id,
       required final String name,
       required final String description,
       required final Sizes sizes,
+      required final String image,
       final bool isInBasket}) = _$_ItemEntity;
   _ItemEntity._() : super._();
 
   @override
-  int get id;
-  @override
+  String get id;
+  @override //мб стринг
   String get name;
   @override
   String get description;
   @override
   Sizes get sizes;
+  @override
+  String get image;
   @override
   bool get isInBasket;
   @override

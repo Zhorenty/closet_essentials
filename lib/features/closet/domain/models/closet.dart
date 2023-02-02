@@ -5,13 +5,14 @@ import 'package:closet_essentials/features/core/sizes.dart';
 part 'closet.freezed.dart';
 
 @freezed
-class ClothesEntity extends Equatable with _$ClothesEntity {
-  ClothesEntity._();
+class Clothes extends Equatable with _$Clothes {
+  Clothes._();
 
-  factory ClothesEntity({
-    required int? id, //мб надо будет поменять на стрингу
-    required String? name,
-    required String? price,
+  factory Clothes({
+    required String id, //мб надо будет поменять на стрингу
+    required String name,
+    required String price,
+    required String image,
     @Default(false) bool isFeature,
   }) = _ClothesEntity;
 
@@ -20,14 +21,15 @@ class ClothesEntity extends Equatable with _$ClothesEntity {
 }
 
 @freezed
-class ItemEntity extends Equatable with _$ItemEntity {
-  ItemEntity._();
+class Item extends Equatable with _$Item {
+  Item._();
 
-  factory ItemEntity({
-    required int id,
+  factory Item({
+    required String id, //мб стринг
     required String name,
     required String description,
     required Sizes sizes,
+    required String image,
     @Default(false) bool isInBasket,
   }) = _ItemEntity;
 
