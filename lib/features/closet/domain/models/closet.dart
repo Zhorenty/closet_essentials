@@ -36,3 +36,5 @@ class Item extends Equatable with _$Item {
   @override
   List<Object?> get props => [id, name, description, sizes, isInBasket];
 }
+  
+
